@@ -80,15 +80,13 @@ const Navigation = () => {
 
                 {/* Mobile Menu */}
                 {isMobileMenuOpen && (
-                    <div className="md:hidden mt-4 pb-4 space-y-4">
+                    <div className="md:hidden mt-4 pb-4 space-y-3 bg-white/95 backdrop-blur-lg -mx-6 px-6 py-4 rounded-b-lg shadow-lg">
                         {navLinks.map((link) => (
                             <a
                                 key={link.name}
                                 href={link.href}
                                 onClick={() => setIsMobileMenuOpen(false)}
-                                className={`block font-sans text-sm tracking-wide uppercase transition-colors hover:text-gold ${
-                                    isScrolled ? 'text-charcoal' : 'text-white'
-                                }`}
+                                className="block font-sans text-sm tracking-wide uppercase transition-colors hover:text-gold text-charcoal py-2 border-b border-charcoal/10 last:border-0"
                             >
                                 {link.name}
                             </a>
@@ -96,7 +94,7 @@ const Navigation = () => {
                         <a
                             href="#contact"
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="block text-center px-6 py-2 bg-gold text-charcoal font-sans text-sm tracking-wide uppercase hover:bg-gold/90 transition-all duration-300"
+                            className="block text-center px-6 py-3 bg-gold text-charcoal font-sans text-sm tracking-wide uppercase hover:bg-gold/90 transition-all duration-300 mt-2 active:scale-95"
                         >
                             Naroči
                         </a>
@@ -128,16 +126,16 @@ const Hero = () => {
             </div>
 
             {/* Hero Content */}
-            <div className={`relative h-full flex flex-col items-center justify-center text-center px-6 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white mb-6 tracking-wide">
+            <div className={`relative h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 transition-all duration-1500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-serif font-light text-white mb-4 sm:mb-6 tracking-wide">
                     Cvetličarna Mak
                 </h1>
-                <p className="text-xl md:text-2xl lg:text-3xl font-serif font-light text-white/90 mb-12 max-w-3xl">
+                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif font-light text-white/90 mb-8 sm:mb-12 max-w-3xl px-4">
                     Kjer narava postane umetnost.
                 </p>
                 <a 
                     href="#contact" 
-                    className="inline-block px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-sans text-sm tracking-widest uppercase hover:bg-white hover:text-charcoal transition-all duration-300 hover:scale-105"
+                    className="inline-block px-8 sm:px-10 py-3 sm:py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-sans text-xs sm:text-sm tracking-widest uppercase hover:bg-white hover:text-charcoal transition-all duration-300 hover:scale-105 active:scale-95"
                 >
                     Naroči unikatno kreacijo
                 </a>
@@ -235,18 +233,18 @@ const Gallery = () => {
     ];
 
     return (
-        <section id="gallery" className="py-20 md:py-32 px-6 bg-cream">
+        <section id="gallery" className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-cream">
             <div className="max-w-7xl mx-auto">
                 {/* Section Header */}
-                <div className="text-center mb-16 md:mb-24">
-                    <h2 className="text-4xl md:text-6xl font-serif font-light text-charcoal mb-4 tracking-wide">
+                <div className="text-center mb-12 sm:mb-16 md:mb-24">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-light text-charcoal mb-4 tracking-wide">
                         Izbrana dela
                     </h2>
                     <div className="w-20 h-px bg-gold mx-auto"></div>
                 </div>
 
                 {/* Masonry Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
                     {galleryItems.map((item, index) => (
                         <GalleryItem 
                             key={index}
@@ -264,27 +262,27 @@ const Gallery = () => {
 // About Section Component
 const About = () => {
     return (
-        <section id="about" className="py-20 md:py-32 px-6 bg-white">
+        <section id="about" className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-white">
             <div className="max-w-5xl mx-auto">
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-6xl font-serif font-light text-charcoal mb-8 tracking-wide">
+                <div className="text-center mb-12 sm:mb-16">
+                    <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-light text-charcoal mb-6 sm:mb-8 tracking-wide">
                         Umetnost ustvarjanja
                     </h2>
-                    <div className="w-20 h-px bg-gold mx-auto mb-12"></div>
+                    <div className="w-20 h-px bg-gold mx-auto mb-8 sm:mb-12"></div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="space-y-6 text-charcoal/80 font-light leading-relaxed">
-                        <p className="text-lg md:text-xl">
+                <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                    <div className="space-y-4 sm:space-y-6 text-charcoal/80 font-light leading-relaxed">
+                        <p className="text-base sm:text-lg md:text-xl">
                             V Cvetličarni Mak ne ustvarjamo zgolj šopkov – ustvarjamo čustvene zgodbe, 
                             ujete v poetični harmoniji barv, oblik in dišav.
                         </p>
-                        <p className="text-base md:text-lg">
+                        <p className="text-sm sm:text-base md:text-lg">
                             Vsaka cvetlična kreacija je edinstveno umetniško delo, ki ga oblikujemo 
                             z globokim spoštovanjem do narave in osebnim pristopom do vsakega posameznika. 
                             Naša strast je pretvoriti vaše emocije v cvetlično stvaritev, ki presega navadno darilo.
                         </p>
-                        <p className="text-base md:text-lg">
+                        <p className="text-sm sm:text-base md:text-lg">
                             Z izbranimi sezonskimi cvetovi, naravnimi materiali in premišljeno kompozicijo 
                             vsak šopek postane izraz najčistejše umetnosti – tiste, ki raste iz zemlje in govori jeziku srca.
                         </p>
@@ -301,7 +299,7 @@ const About = () => {
                 </div>
 
                 {/* Features */}
-                <div className="grid md:grid-cols-3 gap-8 mt-20">
+                <div className="grid sm:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-16 md:mt-20">
                     <div className="text-center p-6">
                         <div className="w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                             <svg className="w-12 h-12 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -340,48 +338,48 @@ const About = () => {
 // Contact/CTA Section Component
 const Contact = () => {
     return (
-        <section id="contact" className="py-20 md:py-32 px-6 bg-charcoal text-white">
+        <section id="contact" className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 bg-charcoal text-white">
             <div className="max-w-4xl mx-auto text-center">
-                <h2 className="text-4xl md:text-6xl font-serif font-light mb-8 tracking-wide">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-serif font-light mb-6 sm:mb-8 tracking-wide">
                     Ustvarimo skupaj
                 </h2>
-                <div className="w-20 h-px bg-gold mx-auto mb-12"></div>
+                <div className="w-20 h-px bg-gold mx-auto mb-8 sm:mb-12"></div>
                 
-                <p className="text-xl md:text-2xl font-light mb-16 text-white/90">
+                <p className="text-lg sm:text-xl md:text-2xl font-light mb-12 sm:mb-16 text-white/90 px-4">
                     Vsaka kreacija je unikatna. Kontaktirajte naju in skupaj bomo ustvarili 
                     cvetlično zgodbo, ki bo popolno odražala vaše želje.
                 </p>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-sm hover:bg-white/10 transition-all duration-300">
+                <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 max-w-3xl mx-auto">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 rounded-sm hover:bg-white/10 transition-all duration-300">
                         <svg className="w-10 h-10 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
-                        <h3 className="text-2xl font-serif mb-2">Pokličite</h3>
-                        <p className="text-white/70 text-sm mb-4">Ponedeljek - Sobota, 9:00 - 18:00</p>
-                        <a href="tel:+38640123456" className="text-xl text-gold hover:text-gold/80 transition-colors">
+                        <h3 className="text-xl sm:text-2xl font-serif mb-2">Pokličite</h3>
+                        <p className="text-white/70 text-xs sm:text-sm mb-3 sm:mb-4">Ponedeljek - Sobota, 9:00 - 18:00</p>
+                        <a href="tel:+38640123456" className="text-lg sm:text-xl text-gold hover:text-gold/80 transition-colors active:text-gold/70">
                             +386 40 123 456
                         </a>
                     </div>
 
-                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 rounded-sm hover:bg-white/10 transition-all duration-300">
+                    <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 sm:p-8 rounded-sm hover:bg-white/10 transition-all duration-300">
                         <svg className="w-10 h-10 text-gold mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <h3 className="text-2xl font-serif mb-2">Obiščite salon</h3>
-                        <p className="text-white/70 text-sm mb-4">Vstopite v svet cvetličnega čudeža</p>
-                        <p className="text-lg text-gold">
+                        <h3 className="text-xl sm:text-2xl font-serif mb-2">Obiščite salon</h3>
+                        <p className="text-white/70 text-xs sm:text-sm mb-3 sm:mb-4">Vstopite v svet cvetličnega čudeža</p>
+                        <p className="text-base sm:text-lg text-gold">
                             Slovenčeva ulica 12<br />
                             1000 Ljubljana
                         </p>
                     </div>
                 </div>
 
-                <div className="mt-16">
+                <div className="mt-12 sm:mt-16">
                     <a 
                         href="mailto:info@cvetlicarnamak.si"
-                        className="inline-block px-12 py-4 bg-gold text-charcoal font-sans text-sm tracking-widest uppercase hover:bg-gold/90 transition-all duration-300 hover:scale-105"
+                        className="inline-block px-8 sm:px-12 py-3 sm:py-4 bg-gold text-charcoal font-sans text-xs sm:text-sm tracking-widest uppercase hover:bg-gold/90 transition-all duration-300 hover:scale-105 active:scale-95"
                     >
                         Pošlji sporočilo
                     </a>
@@ -389,17 +387,17 @@ const Contact = () => {
             </div>
 
             {/* Google Maps */}
-            <div className="max-w-6xl mx-auto mt-20 px-6">
+            <div className="max-w-6xl mx-auto mt-12 sm:mt-16 md:mt-20 px-4 sm:px-6">
                 <div className="rounded-lg overflow-hidden shadow-2xl">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2768.0645894327!2d14.509982576490824!3d46.06518097111561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47652d5b73e314e9%3A0x400f81c823747a0!2sSloven%C4%8Deva%20ulica%2012%2C%201000%20Ljubljana!5e0!3m2!1ssl!2ssi!4v1709990000000!5m2!1ssl!2ssi"
                         width="100%" 
-                        height="450" 
+                        height="300" 
                         style={{ border: 0 }}
                         allowFullScreen="" 
                         loading="lazy" 
                         referrerPolicy="no-referrer-when-downgrade"
-                        className="w-full"
+                        className="w-full sm:h-96 md:h-[450px]"
                     ></iframe>
                 </div>
                 <div className="text-center mt-6">
@@ -418,10 +416,10 @@ const Contact = () => {
 // Footer Component
 const Footer = () => {
     return (
-        <footer className="bg-cream py-12 px-6">
+        <footer className="bg-cream py-10 sm:py-12 px-4 sm:px-6">
             <div className="max-w-6xl mx-auto">
                 {/* Social Media */}
-                <div className="flex justify-center gap-6 mb-8">
+                <div className="flex justify-center gap-4 sm:gap-6 mb-6 sm:mb-8">
                     <a 
                         href="https://instagram.com" 
                         target="_blank" 
@@ -456,10 +454,10 @@ const Footer = () => {
 
                 {/* Brand & Info */}
                 <div className="text-center">
-                    <h3 className="text-3xl font-serif text-charcoal mb-3">Cvetličarna Mak</h3>
-                    <p className="text-charcoal/60 text-sm mb-2">Slovenčeva ulica 12, 1000 Ljubljana</p>
-                    <p className="text-charcoal/60 text-sm mb-6">info@cvetlicarnamak.si</p>
-                    <div className="w-16 h-px bg-gold/50 mx-auto mb-6"></div>
+                    <h3 className="text-2xl sm:text-3xl font-serif text-charcoal mb-2 sm:mb-3">Cvetličarna Mak</h3>
+                    <p className="text-charcoal/60 text-xs sm:text-sm mb-1 sm:mb-2">Slovenčeva ulica 12, 1000 Ljubljana</p>
+                    <p className="text-charcoal/60 text-xs sm:text-sm mb-4 sm:mb-6">info@cvetlicarnamak.si</p>
+                    <div className="w-16 h-px bg-gold/50 mx-auto mb-4 sm:mb-6"></div>
                     <p className="text-charcoal/50 text-xs">
                         © 2026 Cvetličarna Mak. Vse pravice pridržane.
                     </p>
@@ -487,12 +485,12 @@ const StickyButton = () => {
     }, []);
 
     return (
-        <div className={`fixed bottom-8 right-8 z-50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+        <div className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 md:bottom-8 md:right-8 z-50 transition-all duration-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
             <a 
                 href="#contact"
-                className="flex items-center gap-3 px-6 py-4 bg-gold text-charcoal font-sans text-sm tracking-wide uppercase shadow-2xl hover:bg-gold/90 transition-all duration-300 hover:scale-105 group"
+                className="flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-3 sm:py-4 bg-gold text-charcoal font-sans text-xs sm:text-sm tracking-wide uppercase shadow-2xl hover:bg-gold/90 transition-all duration-300 hover:scale-105 active:scale-95 group"
             >
-                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
                 Kontakt
